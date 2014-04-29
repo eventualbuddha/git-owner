@@ -1,0 +1,26 @@
+{
+  "name": "git-owner",
+  "version": "0.0.0",
+  "description": "Get owners of files in git.",
+  "main": "lib/index.js",
+  "bin": {
+    "git-owner": "./bin/git-owner"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eventualbuddha/git-owner.git"
+  },
+  "keywords": [
+    "git",
+    "blame"
+  ],
+  "author": "Brian Donovan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eventualbuddha/git-owner/issues"
+  },
+  "homepage": "https://github.com/eventualbuddha/git-owner"
+}
