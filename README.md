@@ -48,6 +48,5 @@ gitBlameStats(process.argv[2], function(err, stats) {
 
 ## Contributing
 
-Contributions are welcome, but at the moment there are no tests which might
-make it a bit harder. You should have ample test files to try it out with,
-though!
+Contributions are welcome. Just fork, add your feature/bugfix on a branch with
+tests, and submit a pull request.
