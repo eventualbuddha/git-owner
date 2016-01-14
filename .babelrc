@@ -1,0 +1,8 @@
+{
+    "presets": ["es2015-rollup"],
+    "plugins": [
+        "syntax-flow",
+        ["typecheck", { "disable": { "production": true } }],
+        "transform-flow-strip-types"
+    ]
+}
