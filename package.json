@@ -16,6 +16,9 @@
     "type": "git",
     "url": "git://github.com/eventualbuddha/git-owner.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "git",
     "blame"
