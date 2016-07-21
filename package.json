@@ -17,6 +17,7 @@
     "url": "git://github.com/eventualbuddha/git-owner.git"
   },
   "files": [
+    "bin",
     "dist"
   ],
   "keywords": [
