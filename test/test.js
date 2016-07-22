@@ -1,5 +1,5 @@
-import gitBlameStats from '../lib/gitBlameStats';
 import mockSpawn from 'mock-spawn';
+import { gitBlameStats } from '../';
 import { strictEqual, deepEqual } from 'assert';
 
 describe('gitBlameStats', () => {
@@ -21,7 +21,7 @@ describe('gitBlameStats', () => {
       (err, stats) => {
         strictEqual(err, null);
         deepEqual(stats, {
-          committers: [{ email: 'dave@example.com', lines: 1 }],
+          committers: [{ email: 'dave@example.com', lines: 1, percentage: 1 }],
           totalLines: 1,
           pairedLines: 0
         });
@@ -39,7 +39,7 @@ describe('gitBlameStats', () => {
       (err, stats) => {
         strictEqual(err, null);
         deepEqual(stats, {
-          committers: [{ email: 'dave@example.com', lines: 2 }],
+          committers: [{ email: 'dave@example.com', lines: 2, percentage: 1 }],
           totalLines: 2,
           pairedLines: 0
         });
@@ -58,8 +58,8 @@ describe('gitBlameStats', () => {
         strictEqual(err, null);
         deepEqual(stats, {
           committers: [
-            { email: 'alice@example.com', lines: 1 },
-            { email: 'bob@example.com', lines: 1 }
+            { email: 'alice@example.com', lines: 1, percentage: 1 },
+            { email: 'bob@example.com', lines: 1, percentage: 1 }
           ],
           totalLines: 1,
           pairedLines: 1
@@ -79,8 +79,8 @@ describe('gitBlameStats', () => {
         strictEqual(err, null);
         deepEqual(stats, {
           committers: [
-            { email: 'alice@example.com', lines: 1 },
-            { email: 'bob@example.com', lines: 1 }
+            { email: 'alice@example.com', lines: 1, percentage: 1 },
+            { email: 'bob@example.com', lines: 1, percentage: 1 }
           ],
           totalLines: 1,
           pairedLines: 1
