@@ -43,7 +43,7 @@
     "mocha": "^3.0.1",
     "mock-spawn": "^0.2.6",
     "reify": "^0.3.6",
-    "rollup": "^0.34.3",
+    "rollup": "^0.34.6",
     "rollup-plugin-babel": "^2.6.1"
   }
 }
