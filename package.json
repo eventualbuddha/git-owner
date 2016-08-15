@@ -1,6 +1,6 @@
 {
   "name": "git-owner",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Get owners of files in git.",
   "main": "dist/git-owner.js",
   "jsnext:main": "dist/git-owner.mjs",
