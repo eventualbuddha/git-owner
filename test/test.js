@@ -7,7 +7,7 @@ describe('gitBlameStats', () => {
     const spawn = mockSpawn();
     spawn.setStrategy((command, args) => {
       strictEqual(command, 'git');
-      deepEqual(args, ['blame', '-C', 'FILE.txt', '--line-porcelain']);
+      deepEqual(args, ['blame', '-C', '-w', 'FILE.txt', '--line-porcelain']);
       return spawn.simple(0);
     });
     gitBlameStats('FILE.txt', (err, stats) => done(err), spawn);
