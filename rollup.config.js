@@ -1,12 +1,12 @@
-import babel from 'rollup-plugin-babel';
-import babelrc from 'babelrc-rollup';
+import typescript from 'rollup-plugin-typescript';
+import * as ts from 'typescript';
 
 var pkg = require('./package.json');
 
 export default {
-  entry: 'lib/index.js',
+  entry: 'lib/index.ts',
   external: ['child_process'],
-  plugins: [babel(babelrc())],
+  plugins: [typescript({ typescript: ts })],
   sourceMap: 'inline',
   targets: [
     {

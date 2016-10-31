@@ -1,10 +1,12 @@
+'use strict';
+
 import mockSpawn from 'mock-spawn';
 import { gitBlameStats } from '../';
 import { strictEqual, deepEqual } from 'assert';
 
 describe('gitBlameStats', () => {
   it('calls `git` on the command line with appropriate arguments', (done) => {
-    const spawn = mockSpawn();
+    let spawn = mockSpawn();
     spawn.setStrategy((command, args) => {
       strictEqual(command, 'git');
       deepEqual(args, ['blame', '-C', '-w', 'FILE.txt', '--line-porcelain']);
@@ -14,7 +16,7 @@ describe('gitBlameStats', () => {
   });
 
   it('reads the committer-mail lines from stdout', (done) => {
-    const spawn = mockSpawn();
+    let spawn = mockSpawn();
     spawn.setDefault(spawn.simple(0, 'committer-mail <dave@example.com>', ''));
     gitBlameStats(
       'FILE.txt',
@@ -32,7 +34,7 @@ describe('gitBlameStats', () => {
   });
 
   it('aggregates multiple lines by the same author', (done) => {
-    const spawn = mockSpawn();
+    let spawn = mockSpawn();
     spawn.setDefault(spawn.simple(0, 'committer-mail <dave@example.com>\ncommitter-mail <dave@example.com>', ''));
     gitBlameStats(
       'FILE.txt',
@@ -50,7 +52,7 @@ describe('gitBlameStats', () => {
   });
 
   it('handles `git+` style pairs from committer-mail lines', (done) => {
-    const spawn = mockSpawn();
+    let spawn = mockSpawn();
     spawn.setDefault(spawn.simple(0, 'committer-mail <git+alice+bob@example.com>', ''));
     gitBlameStats(
       'FILE.txt',
@@ -71,7 +73,7 @@ describe('gitBlameStats', () => {
   });
 
   it('handles `github+` style pairs from committer-mail lines', (done) => {
-    const spawn = mockSpawn();
+    let spawn = mockSpawn();
     spawn.setDefault(spawn.simple(0, 'committer-mail <github+alice+bob@example.com>', ''));
     gitBlameStats(
       'FILE.txt',
@@ -92,12 +94,12 @@ describe('gitBlameStats', () => {
   });
 
   it('calls back with an error if `git-blame` fails', (done) => {
-    const spawn = mockSpawn();
+    let spawn = mockSpawn();
     spawn.setDefault(spawn.simple(1, '', 'OMG BBQ'));
     gitBlameStats(
       'FILE.txt',
       (err, stats) => {
-        strictEqual(stats);
+        strictEqual(stats, null);
         strictEqual(err.message, 'OMG BBQ');
         done();
       },
