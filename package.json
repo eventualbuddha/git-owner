@@ -36,7 +36,7 @@
     "@types/node": "^6.0.46",
     "mocha": "^3.1.0",
     "mock-spawn": "^0.2.6",
-    "reify": "^0.3.8",
+    "reify": "^0.4.1",
     "rollup": "^0.36.3",
     "rollup-plugin-typescript": "^0.8.1",
     "typescript": "^2.0.6"
