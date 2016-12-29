@@ -6,13 +6,13 @@ export type BlameStats = {
   pairedLines: number
 };
 
-type CommitterStats = {
+export type CommitterStats = {
   email: string;
   lines: number;
   percentage: number;
 };
 
-type spawnFunction = typeof spawn;
+export type spawnFunction = typeof spawn;
 
 /**
  * Generates statistics about the committers for a given file.
@@ -30,8 +30,8 @@ export default function gitBlameStats(file: string, callback: (error: Error | nu
       callback(new Error(stderr), null);
     }
 
-    let committers = [];
-    let committersByEmail = {};
+    let committers: Array<CommitterStats> = [];
+    let committersByEmail: { [email: string]: CommitterStats; } = {};
     let totalLines = 0;
     let pairedLines = 0;
 

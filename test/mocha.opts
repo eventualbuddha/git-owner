@@ -1,1 +1,1 @@
---require reify
+--compilers ts:ts-node/register

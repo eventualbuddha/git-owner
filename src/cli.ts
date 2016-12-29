@@ -14,7 +14,7 @@ export default function run() {
     } else {
       const maxPercentage = stats.committers.reduce((max, committer) => Math.max(max, committer.percentage), 0);
 
-      stats.committers.forEach(function(committer) {
+      stats.committers.forEach(committer => {
         const percentage = `${committer.percentage * 100}`;
 
         console.log(
