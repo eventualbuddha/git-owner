@@ -1,6 +1,5 @@
 {
   "name": "git-owner",
-  "version": "1.3.1",
   "description": "Get owners of files in git.",
   "main": "dist/git-owner.js",
   "jsnext:main": "dist/git-owner.mjs",
@@ -12,11 +11,12 @@
     "build": "rollup -c",
     "pretest": "npm run build",
     "test": "mocha",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/eventualbuddha/git-owner.git"
+    "url": "https://github.com/eventualbuddha/git-owner.git"
   },
   "files": [
     "bin",
@@ -39,6 +39,7 @@
     "reify": "^0.4.4",
     "rollup": "^0.38.1",
     "rollup-plugin-typescript": "^0.8.1",
-    "typescript": "^2.1.4"
+    "typescript": "^2.1.4",
+    "semantic-release": "^6.3.2"
   }
 }
