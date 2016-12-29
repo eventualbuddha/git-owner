@@ -40,7 +40,7 @@ $ git owner README.md
 You can also use it as a library:
 
 ```js
-var gitBlameStats = require('../lib').gitBlameStats;
+import { gitBlameStats } from 'git-owner';
 gitBlameStats(process.argv[2], function(err, stats) {
   console.log(stats);
 });
