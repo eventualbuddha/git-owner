@@ -1,4 +1,4 @@
-# git-owner
+# git-owner [![Build Status](https://travis-ci.org/eventualbuddha/git-owner.svg?branch=master)](https://travis-ci.org/eventualbuddha/git-owner) [![npm version](https://badge.fury.io/js/git-owner.svg)](https://badge.fury.io/js/git-owner)
 
 Print "ownership" information for a file in git.
 
