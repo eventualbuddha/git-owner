@@ -1,8 +1,6 @@
-'use strict';
-
-import mockSpawn from 'mock-spawn';
-import { gitBlameStats } from '../';
-import { strictEqual, deepEqual } from 'assert';
+import { deepEqual, strictEqual } from 'assert';
+import mockSpawn = require('mock-spawn');
+import { gitBlameStats } from '../src/index';
 
 describe('gitBlameStats', () => {
   it('calls `git` on the command line with appropriate arguments', (done) => {
@@ -12,7 +10,7 @@ describe('gitBlameStats', () => {
       deepEqual(args, ['blame', '-C', '-w', 'FILE.txt', '--line-porcelain']);
       return spawn.simple(0);
     });
-    gitBlameStats('FILE.txt', (err, stats) => done(err), spawn);
+    gitBlameStats('FILE.txt', err => done(err), spawn);
   });
 
   it('reads the committer-mail lines from stdout', (done) => {
@@ -100,7 +98,7 @@ describe('gitBlameStats', () => {
       'FILE.txt',
       (err, stats) => {
         strictEqual(stats, null);
-        strictEqual(err.message, 'OMG BBQ');
+        strictEqual(err && err.message, 'OMG BBQ');
         done();
       },
       spawn

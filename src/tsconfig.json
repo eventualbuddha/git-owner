@@ -2,7 +2,7 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "module": "commonjs",
-    "typeRoots": ["node_modules/@types"],
+    "typeRoots": ["../node_modules/@types"],
     "declaration": true,
     "lib": ["es2015"],
     "experimentalDecorators": true,
@@ -10,9 +10,5 @@
     "noUnusedLocals": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
-  },
-  "exclude": [
-    "node_modules",
-    "dist/**/*"
-  ]
+  }
 }

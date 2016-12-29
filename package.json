@@ -1,15 +1,16 @@
 {
   "name": "git-owner",
   "description": "Get owners of files in git.",
-  "main": "dist/git-owner.js",
-  "jsnext:main": "dist/git-owner.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "bin": {
     "git-owner": "./bin/git-owner"
   },
   "scripts": {
-    "prebuild": "rm -rf dist",
-    "build": "rollup -c",
-    "pretest": "npm run build",
+    "lint": "tslint --config tslint.json --project tsconfig.json --type-check",
+    "lint-fix": "tslint --config tslint.json --project tsconfig.json --type-check --fix",
+    "build": "./script/build",
+    "pretest": "npm run lint",
     "test": "mocha",
     "prepublish": "npm test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -33,13 +34,13 @@
   },
   "homepage": "https://github.com/eventualbuddha/git-owner",
   "devDependencies": {
-    "@types/node": "^6.0.46",
+    "@types/mocha": "^2.2.35",
+    "@types/node": "^6.0.54",
     "mocha": "^3.2.0",
     "mock-spawn": "^0.2.6",
-    "reify": "^0.4.4",
-    "rollup": "^0.38.1",
-    "rollup-plugin-typescript": "^0.8.1",
-    "typescript": "^2.1.4",
-    "semantic-release": "^6.3.2"
+    "semantic-release": "^6.3.2",
+    "ts-node": "^1.7.3",
+    "tslint": "^4.2.0",
+    "typescript": "^2.1.4"
   }
 }
